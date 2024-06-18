@@ -75,7 +75,7 @@ def monitor_accept():
     def decline_swap():
         while True:
             click_image_found("decline.png", "once")
-            time.sleep(2)  # Adjust sleep time as necessary for the function's purpose
+            time.sleep(1)  # Adjust sleep time as necessary for the function's purpose
     
     autofill_thread = threading.Thread(target=close_auto_fill)
     autofill_thread.daemon = True
