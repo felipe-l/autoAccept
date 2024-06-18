@@ -5,7 +5,7 @@ a = Analysis(
     ['mainDodges.py'],
     pathex=[],
     binaries=[],
-    datas=[('accept.png', '.'),('ban.png', '.'),('rune.png', '.'),('close.png', '.'),('search.png', '.'),('None.png', '.'),('bangrey.png', '.'),('PickAChampion.png', '.')],
+    datas=[('assets/accept.png', '.'), ('assets/ban.png', '.'), ('assets/rune.png', '.'), ('assets/close.png', '.'), ('assets/search.png', '.'), ('assets/None.png', '.'), ('assets/bangrey.png', '.'), ('assets/PickAChampion.png', '.'), ('assets/autoFillJgl.png', '.'), ('assets/close1.png', '.'), ('assets/BanAChamp.png', '.'), ('assets/decline.png', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -35,4 +35,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon="./interLogo.png",
 )
