@@ -5,24 +5,24 @@ import threading
 import os
 import sys
 
+# Determine the directory of the executable
+if getattr(sys, 'frozen', False):
+    base_dir = os.path.dirname(sys.executable)
+else:
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Load the config.py file
+config_path = os.path.join(base_dir, 'config.py')
+if os.path.exists(config_path):
+    exec(open(config_path).read())
+else:
+    raise FileNotFoundError(f"Configuration file not found: {config_path}")
 
 def main():
     if getattr(sys, 'frozen', False):
         os.chdir(sys._MEIPASS)
 
-    # Determine the directory of the executable
-    if getattr(sys, 'frozen', False):
-        base_dir = os.path.dirname(sys.executable)
-    else:
-        base_dir = os.path.dirname(os.path.abspath(__file__))
-
-    # Load the config.py file
-    config_path = os.path.join(base_dir, 'config.py')
-    if os.path.exists(config_path):
-        exec(open(config_path).read())
-    else:
-        raise FileNotFoundError(f"Configuration file not found: {config_path}")
-
+    sys.stderr = open(os.path.join(base_dir, 'errors.txt'), 'w')
     monitor_accept()
 
 def task(bans, picks):
@@ -101,7 +101,7 @@ def click_image_found(imageName, interaction="click", conf=0.7):
     print(f"Looking for {imageName}!")
     while accept_button_location is None:
         try:
-            accept_button_location = pyautogui.locateOnScreen(f"assets/{imageName}", confidence=conf)
+            accept_button_location = pyautogui.locateOnScreen(f"./assets/{imageName}", confidence=conf)
         except:
             print(f"{imageName} NOT FOUND")
             if interaction == "once":

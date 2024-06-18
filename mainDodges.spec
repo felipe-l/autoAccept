@@ -5,7 +5,7 @@ a = Analysis(
     ['mainDodges.py'],
     pathex=[],
     binaries=[],
-    datas=[('assets/accept.png', '.'), ('assets/ban.png', '.'), ('assets/rune.png', '.'), ('assets/close.png', '.'), ('assets/search.png', '.'), ('assets/None.png', '.'), ('assets/bangrey.png', '.'), ('assets/PickAChampion.png', '.'), ('assets/autoFillJgl.png', '.'), ('assets/close1.png', '.'), ('assets/BanAChamp.png', '.'), ('assets/decline.png', '.')],
+    datas=[('./assets/accept.png', 'assets'), ('assets/ban.png', 'assets'), ('assets/rune.png', 'assets'), ('assets/close.png', 'assets'), ('assets/search.png', 'assets'), ('assets/None.png', 'assets'), ('assets/bangrey.png', 'assets'), ('assets/PickAChampion.png', 'assets'), ('assets/autoFillJgl.png', 'assets'), ('assets/close1.png', 'assets'), ('assets/BanAChamp.png', 'assets'), ('assets/decline.png', 'assets')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
